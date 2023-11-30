@@ -9,10 +9,10 @@ pub trait OptionExt<T> {
     ///
     /// let x: Option<u32> = Some(2);
     /// assert_eq!(x.is_none_or(|x| x > 1), true);
-    /// 
+    ///
     /// let x: Option<u32> = Some(0);
     /// assert_eq!(x.is_none_or(|x| x > 1), false);
-    /// 
+    ///
     /// let x: Option<u32> = None;
     /// assert_eq!(x.is_none_or(|x| x > 1), true);
     /// ```

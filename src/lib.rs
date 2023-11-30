@@ -1,9 +1,8 @@
 //! APIs that feel like they should be in the standard library, but they are not.
-//! 
+//!
 //! Also some unstable APIs if they're trivial enough to implement externally.
 
 #![cfg_attr(not(feature = "std"), no_std)]
-
 // lint me harder
 #![forbid(non_ascii_idents)]
 #![deny(
@@ -29,13 +28,14 @@
 )]
 #![warn(clippy::pedantic, missing_docs)]
 // not that hard
-#![allow(clippy::module_name_repetitions)]  // common for extension traits
+#![allow(clippy::module_name_repetitions)] // common for extension traits
 
+mod macros;
+mod option;
 #[cfg(feature = "std")]
 mod path;
 mod primitive;
-mod option;
-mod macros;
+mod result;
 
 // Glob reexports look poorly in the docs
 macro_rules! define_prelude {
@@ -52,6 +52,7 @@ macro_rules! define_prelude {
 define_prelude! {
     pub use crate::option::OptionExt;
     pub use crate::primitive::BoolExt;
+    pub use crate::result::ResultExt;
 
     #[cfg(feature = "std")]
     pub use crate::path::PathBufExt;
