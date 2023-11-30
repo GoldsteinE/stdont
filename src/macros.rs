@@ -20,7 +20,7 @@ macro_rules! expect_eq {
 }
 
 #[cfg(test)]
-#[allow(clippy::unwrap_used)]  // it's test code, duh
+#[allow(clippy::unwrap_used)] // it's test code, duh
 mod tests {
     use crate::expect_eq;
 
