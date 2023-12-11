@@ -36,6 +36,8 @@ mod option;
 mod path;
 mod primitive;
 mod result;
+#[cfg(feature = "alloc")]
+mod vec;
 
 // Glob reexports look poorly in the docs
 macro_rules! define_prelude {
@@ -56,4 +58,7 @@ define_prelude! {
 
     #[cfg(feature = "std")]
     pub use crate::path::PathBufExt;
+
+    #[cfg(feature = "alloc")]
+    pub use crate::vec::VecExt;
 }
