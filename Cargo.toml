@@ -2,6 +2,10 @@
 name = "stdont"
 version = "0.1.0"
 edition = "2021"
+rust-version = "1.58.1"
+description = "Kitchen sink of utils that I'd like to see in std"
+license = "MIT OR Apache-2.0"
+categories = ["rust-patterns"]
 
 [features]
 alloc = []
